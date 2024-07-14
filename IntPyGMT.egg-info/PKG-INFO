@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: IntPyGMT
+Version: 0.1.0
+Summary: An interactive map tool for pyGMT
+Home-page: https://github.com/chelle0425/interactive_pygmt
+Author: Rochelle Pun
+Author-email: rochelle.pun@gmail.com
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: ipympl
+Requires-Dist: basemap
+Requires-Dist: pillow
