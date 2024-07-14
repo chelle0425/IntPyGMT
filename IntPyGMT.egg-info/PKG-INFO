@@ -10,3 +10,4 @@ Requires-Dist: matplotlib
 Requires-Dist: ipympl
 Requires-Dist: basemap
 Requires-Dist: pillow
+Requires-Dist: ipykernel
