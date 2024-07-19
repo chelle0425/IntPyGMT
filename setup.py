@@ -10,10 +10,9 @@ setup(
     packages=['IntPyGMT'],
     package_dir = {'IntPyGMT':'python'},
     install_requires = [
-        'numpy',
+        'numpy<2.0',
         'matplotlib',
         'ipympl',
         'basemap',
-        'pillow',
-        'ipykernel']
+        'pillow']
 )
