@@ -1,5 +1,5 @@
 # IntPyGMT
-A simple code that overlays a matplotlib widget on top of a ˆborderlessˆ PyGMT basemap to enable coordinate selection.
+A simple code that overlays a matplotlib widget on top of a _borderless_ PyGMT basemap to enable coordinate selection.
 
 ### Installation
 This code works in conjunction with PyGMT virtual environment (see https://www.pygmt.org/latest/install.html)
@@ -15,7 +15,7 @@ Install the library
 pip install IntPyGMT@git+https://github.com/chelle0425/IntPyGMT.git
 ```
 
-To use on top of a ˆborderlessˆ PyGMT basemap (eg "test.png"):
+To use on top of a _borderless_ PyGMT basemap (eg "test.png"):
 
 ```
 from IntPyGMT.IntPyGMT_overlay import interactive_pygmt
