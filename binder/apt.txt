@@ -1,0 +1,5 @@
+gmt
+pandas
+xarray
+netcdf4
+packaging
