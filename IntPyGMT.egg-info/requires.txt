@@ -4,3 +4,4 @@ ipympl
 basemap
 pillow
 ipykernel
+pygmt

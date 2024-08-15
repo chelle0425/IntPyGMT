@@ -14,5 +14,6 @@ setup(
         'matplotlib',
         'ipympl',
         'basemap',
-        'pillow']
+        'pillow',
+        'pygmt']
 )

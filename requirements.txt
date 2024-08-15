@@ -3,3 +3,4 @@ matplotlib
 ipympl
 basemap
 pillow
+pygmt
