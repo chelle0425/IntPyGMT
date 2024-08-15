@@ -11,3 +11,4 @@ Requires-Dist: ipympl
 Requires-Dist: basemap
 Requires-Dist: pillow
 Requires-Dist: ipykernel
+Requires-Dist: pygmt
