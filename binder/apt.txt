@@ -1,8 +1,2 @@
 libgmt-dev
 gmt
-numpy
-matplotlib
-ipympl
-basemap
-pillow
-pygmt
