@@ -30,7 +30,7 @@ def interactive_pygmt(png_path, llcrnrlat, urcrnrlat, llcrnrlon, urcrnrlon, grid
     assert DPI_horz == DPI_vert
 
     fig = plt.figure(figsize=(width/DPI_horz, height/DPI_horz))
-    ax1 = plt.subplot(111)
+    ax1 = fig.add_axes([1111])
 
     # creating matplotlib basemap for overlay
     m = Basemap(projection='merc', resolution='i',\
