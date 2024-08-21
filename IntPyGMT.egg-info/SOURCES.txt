@@ -7,3 +7,4 @@ IntPyGMT.egg-info/requires.txt
 IntPyGMT.egg-info/top_level.txt
 python/IntPyGMT_overlay.py
 python/__init__.py
+python/mapproject.py
