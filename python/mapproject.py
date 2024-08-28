@@ -1,4 +1,6 @@
 '''
+https://forum.generic-mapping-tools.org/t/replicate-grdview-t-with-pygmt/5121
+
 with pygmt.clib.Session() as s:
     with s.virtualfile_in(check_kind="raster", data=grd) as vingrd:
         args = [f'{vingrd}', '-T', '-BNSEW', '-Ba.1f.05', '-C']
