@@ -1,2 +1,0 @@
-#!/bin/bash
-conda install -c conda_forge pygmt
