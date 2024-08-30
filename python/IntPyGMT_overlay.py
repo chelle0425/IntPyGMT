@@ -9,6 +9,7 @@ import pygmt
 from pygmt.clib import Session
 from pygmt.helpers import GMTTempFile
 
+%matplotlib widget
 
 ### functions ###
 
@@ -109,7 +110,7 @@ def gmt_png(png_path, region, projection, xshift, yshift):
     ########## inputs ##########
     # turn pygmt region input into gmt str
     if isinstance(region, str):
-      region = region_str
+      region_str = region
     elif isinstance(region, list):
       region_str = f"{region[0]}/{region[1]}/{region[2]}/{region[3]}"
     else:
@@ -157,7 +158,7 @@ def gmt_png(png_path, region, projection, xshift, yshift):
     width, height = img.size # canvas (width,height) tuple in pixels
     DPI_horz, DPI_vert = img.info.get('dpi')
 
-    assert DPI_horz == DPI_vert # is this != even possible??
+    assert DPI_horz == DPI_vert # is this != even possible??  what about 299.9999994 vs 299.9999995 ?
 
 
     ################################################
@@ -222,6 +223,39 @@ def gmt_png(png_path, region, projection, xshift, yshift):
     cid=fig.canvas.mpl_connect('button_press_event', onclick)
 
     plt.axis('off')
-    plt.show()
+    #plt.show()
 
-    return 
+    return ax1
+
+
+# example
+# ax1 = gmt_png(png_path, region, projection, xshift, yshift)
+
+def coords_from_figure(ax1):
+    coords = ax1.get_title().split()
+    lat = float(coords[-1])
+    lon = float(coords[-2].split(',')[0])
+    return lon, lat
+
+
+'''
+The proper approach should be something like:
+
+class IntPygmtPlot(....):
+    def __init__(...):
+        ... most of your code above
+    
+    def pos_to_lonlat(x, y):
+        ...
+    ...
+    def plot(interactive = True, onclickF = onclick):
+        ax1 = plt.subplot...
+        if interactive:
+            fig.canvas.mpl_connect('button_press_event', onclickF)
+
+
+Because then you can do something like
+thisfig =  IntPygmtPlot(png_path=..., )
+thisfig.plot(onclickF = tsplot)
+
+'''
