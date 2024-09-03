@@ -1,8 +1,46 @@
 # IntPyGMT
-A simple code that overlays a matplotlib widget on top of a _borderless_ PyGMT png to enable coordinate selection.
 
+## Table of Contents
+- [About the Project](#about-the-project)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Usage](#usage)
+- [Examples](#examples)
+  - [GMT/PyGMT png](#gmt_png)
+  - [Borderless Mercator png](#mercator_png)
+- [To Do](#to-do)
+- [Meta](#meta)
+
+
+## About the Project
+A Jupyter Notebook library that generates interactive maps from png images where you can click to retrieve map coordinates. It supports two primary functionalities:
+
+#### 1. From a GMT/PyGMT-generated png
+
+Creates an interactive map from a GMT/PyGMT-generated png image. This feature supports all GMT/PyGMT projection systems provided that the correct xshift and yshift parameters are specified.
+
+This works by overlaying an interactive matplotlib widget on top of a GMT/PyGMT-generated png. User's click coordinates are recorded and adjusted for the map's border width (via xshift and yshift) before processed through GMT's mapproject module which returns map coordinates based on the specified region and projection.
+
+#### 2. From a _borderless_ png map (in Mercator projection)
+
+Creates an interactive map from a _borderless_ png image **in Mercator projection**. This is not limited to GMT/PyGMT-generated outputs provided that you know the lower-left corner and upper-right corner coordinates of the map.
+
+This works by aligning a matplotlib map on top of a _borderless_ png image. User's click coordinates on the matplotlib map is then directly registered and returned as map coordinates.
+
+## Getting Started
 ### Installation
-This code works in conjunction with PyGMT virtual environment (see https://www.pygmt.org/latest/install.html)
+This code works in conjunction with PyGMT virtual environment (see https://www.pygmt.org/latest/install.html).
+To get a local copy up and running follow these simple example steps.
+
+Clone the repo
+```
+git clone https://github.com/chelle0425/IntPyGMT.git
+```
+
+Navigate to the project directory
+```
+cd IntPyGMT
+```
 
 Initialize PyGMT environment
 ```
@@ -15,11 +53,51 @@ Install the library
 pip install IntPyGMT@git+https://github.com/chelle0425/IntPyGMT.git
 ```
 
-To use on top of a _borderless_ PyGMT basemap (eg "test.png"):
-
+### Usage
+Please ensure that matplotlib widget is enabled before you call the function.
 ```
-from IntPyGMT.IntPyGMT_overlay import interactive_pygmt
+%matplotlib widget
+```
+
+To use on top of a GMT/PyGMT-generated png (see demo_conical/cascadia.ipynb):
+```
+from IntPyGMT.IntPyGMT_overlay import gmt_png
+region=[-136, -118.5, 38.5, 53.1]
+projection="B-127.25/45.8/43.19/47.86/11c"
+
+%matplotlib widget
+gmt_png("cascadia.png", region, projection, "2c", "5c")
+```
+
+
+To use on top of a _borderless_ png map (see Herat_InSAR_stc.ipynb):
+```
+from IntPyGMT.IntPyGMT_overlay import mercator_png
 %matplotlib widget
 
-interactive_pygmt("test.png", llcrnrlat, urcrnrlat, llcrnrlon, urcrnrlon, grid_freq)
+llcrnrlon=62 # lower left corner longitude 
+llcrnrlat=32.65 # lower left corner latitude
+urcrnrlon=72.8 # upper right corner longitude
+urcrnrlat=38.65 # upper right corner latitude
+grid_freq = 2
+mercator_png("Herat_InSAR_stc.png", llcrnrlat, urcrnrlat, llcrnrlon, urcrnrlon, grid_freq)
 ```
+
+## Examples
+### GMT/PyGMT png
+
+### Borderless Mercator png
+
+## To Do
+- Incoperate coords_from_figure(ax1) to demo/ readme
+- Make m.drawcoastlines() and parallels and meridians plot optional for mercator_png()
+- Do this the proper way using OOP
+
+## Meta
+This project was initiated as part of my 3rd-year Independent Project in the Department of Earth Science and Engineering at Imperial College London (see: github.com/chelle0425/MomentTensorSum). It has greatly benefitted from subsequent development during my time as a COMET research intern at the University of Leeds.
+
+I would like to express my sincerest gratitude to Dr Milan Lazecky, for it was his invaluable guidance and unwavering support that made this project a reality. 
+
+Additionally, I am grateful to COMET, the UK’s Centre for the Observation and Modelling of Earthquakes, Volcanoes and Tectonics, for funding my research internship. It was during this time that we developed the core functionality of the code.
+
+This project may be freely distributed and modified provided the source is acknowledged explicitly. Please cite the latest release when you do so.

@@ -9,17 +9,16 @@ import pygmt
 from pygmt.clib import Session
 from pygmt.helpers import GMTTempFile
 
-%matplotlib widget
 
 ### functions ###
 
 def mercator_png(png_path, llcrnrlat, urcrnrlat, llcrnrlon, urcrnrlon, grid_freq):
     '''
-    Creates an interactive map from a borderless pyGMT png where you can click to retrieve coordinates.
+    Creates an interactive map from a borderless png where you can click to retrieve coordinates.
     Will work only for mercator projection.
 
     Parameters:
-        png_path (str): path to the borderless pyGMT map
+        png_path (str): path to the borderless pygmt map
         llcrnrlon (float): lower left corner longitude
         llcrnrlat (float): lower left corner latitude
         urcrnrlon (float): upper right corner longitude
@@ -86,12 +85,22 @@ def mercator_png(png_path, llcrnrlat, urcrnrlat, llcrnrlon, urcrnrlon, grid_freq
 
     return
 
+'''
+To do:
+- make m.drawcoastlines() and parallels and meridians plot optional
+'''
+
+
 def gmt_png(png_path, region, projection, xshift, yshift):
     '''
-    Creates an interactive map from a borderless pyGMT png where you can click to retrieve coordinates.
+    Creates an interactive map from a PyGMT png where you can click to retrieve coordinates.
+    Please ensure that you have the right xshift and y shift for this to work.
+    A simple way to do so is to specify the background canvas dimension prior to plotting
+    and adjust the xshift and yshit manually (see demo_conical/cascadia.ipynb).
+
 
     Parameters:
-        png_path (str): path to the borderless PyGMT map
+        png_path (str): path to the pygmt map
         region (str/ list): pygmt region input
         projection (str): pygmt map projection input
         xshift: xshift left from bottom left corner relative to background canvas
@@ -227,9 +236,10 @@ def gmt_png(png_path, region, projection, xshift, yshift):
 
     return ax1
 
-
-# example
-# ax1 = gmt_png(png_path, region, projection, xshift, yshift)
+'''
+Example
+ax1 = gmt_png(png_path, region, projection, xshift, yshift)
+'''
 
 def coords_from_figure(ax1):
     coords = ax1.get_title().split()
