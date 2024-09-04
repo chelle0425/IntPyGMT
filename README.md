@@ -1,19 +1,5 @@
 # IntPyGMT
-
-## Table of Contents
-- [About the Project](#about-the-project)
-- [Getting Started](#getting-started)
-  - [Installation](#installation)
-  - [Usage](#usage)
-- [Examples](#examples)
-  - [GMT/PyGMT png](#gmt_png)
-  - [Borderless Mercator png](#mercator_png)
-- [To Do](#to-do)
-- [Meta](#meta)
-
-
-## About the Project
-A Jupyter Notebook library that generates interactive maps from png images where you can click to retrieve map coordinates. It supports two primary functionalities:
+IntPyGMT is an open-source Jupyter Notebook library that generates interactive maps from png images where you can click to retrieve map coordinates. It supports two primary functionalities:
 
 #### 1. From a GMT/PyGMT-generated png
 
@@ -23,9 +9,10 @@ This works by overlaying an interactive matplotlib widget on top of a GMT/PyGMT-
 
 #### 2. From a _borderless_ png map (in Mercator projection)
 
-Creates an interactive map from a _borderless_ png image **in Mercator projection**. This is not limited to GMT/PyGMT-generated outputs provided that you know the lower-left corner and upper-right corner coordinates of the map.
+Creates an interactive map from a _borderless_ png image **in Mercator projection**. This is not limited to GMT/PyGMT-generated outputs provided that the coordinates of the lower-left and upper-right corners of the map are known.
 
-This works by aligning a matplotlib map on top of a _borderless_ png image. User's click coordinates on the matplotlib map is then directly registered and returned as map coordinates.
+This works by aligning a matplotlib map on top of a _borderless_ png image. User's click coordinates on the matplotlib map are then directly registered and returned as map coordinates.
+
 
 ## Getting Started
 ### Installation
@@ -62,10 +49,11 @@ Please ensure that matplotlib widget is enabled before you call the function.
 To use on top of a GMT/PyGMT-generated png (see demo_conical/cascadia.ipynb):
 ```
 from IntPyGMT.IntPyGMT_overlay import gmt_png
+%matplotlib widget
+
 region=[-136, -118.5, 38.5, 53.1]
 projection="B-127.25/45.8/43.19/47.86/11c"
 
-%matplotlib widget
 gmt_png("cascadia.png", region, projection, "2c", "5c")
 ```
 
@@ -89,15 +77,24 @@ mercator_png("Herat_InSAR_stc.png", llcrnrlat, urcrnrlat, llcrnrlon, urcrnrlon, 
 ### Borderless Mercator png
 
 ## To Do
-- Incoperate coords_from_figure(ax1) to demo/ readme
+- README images and gifs
+- Binder
+- Cite sources for demos
 - Make m.drawcoastlines() and parallels and meridians plot optional for mercator_png()
 - Do this the proper way using OOP
 
 ## Meta
+This is an open-source project, thus contributions and edits are strongly encouraged. GitHub users may open issues or make pull requests for contributions. Alternatively please email me (rochelle.pun@gmail.com) for any suggestions and/ or enquiries.
+
+This project may be freely distributed and modified provided the source is acknowledged explicitly. Please cite the latest release when you do so.
+
+### Acknowledgements
 This project was initiated as part of my 3rd-year Independent Project in the Department of Earth Science and Engineering at Imperial College London (see: github.com/chelle0425/MomentTensorSum). It has greatly benefitted from subsequent development during my time as a COMET research intern at the University of Leeds.
 
 I would like to express my sincerest gratitude to Dr Milan Lazecky, for it was his invaluable guidance and unwavering support that made this project a reality. 
 
 Additionally, I am grateful to COMET, the UK’s Centre for the Observation and Modelling of Earthquakes, Volcanoes and Tectonics, for funding my research internship. It was during this time that we developed the core functionality of the code.
 
-This project may be freely distributed and modified provided the source is acknowledged explicitly. Please cite the latest release when you do so.
+*Version 1.0.0*
+
+<rochelle.pun@gmail.com>, 2024

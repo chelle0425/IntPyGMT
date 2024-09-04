@@ -27,6 +27,7 @@ def mercator_png(png_path, llcrnrlat, urcrnrlat, llcrnrlon, urcrnrlon, grid_freq
 
         
     Example (see demo_borderless_mercator_png):
+        %matplotlib widget
         llcrnrlon=62
         llcrnrlat=32.65
         urcrnrlon=72.8
@@ -107,13 +108,10 @@ def gmt_png(png_path, region, projection, xshift, yshift):
         yshift: yshift upwards from bottom-most basemap extent relative to background canvas
 
     Example (see demo_conical/cascadia.ipynb):
-
+        %matplotlib widget
         region=[-136, -118.5, 38.5, 53.1]
         projection="B-127.25/45.8/43.19/47.86/11c"
-
-        %matplotlib widget
         gmt_png("cascadia.png", region, projection, "2c", "5c")
-
     '''
 
     ########## inputs ##########
@@ -204,7 +202,7 @@ def gmt_png(png_path, region, projection, xshift, yshift):
       ### lon lat conversion using mapproject ###
       with Session() as ses:
         with ses.virtualfile_from_vectors(x, y) as fin:
-          args = [f'{fin}', f'-R{region_str}', f'-J{projection}', '-I']
+          args = [f'{fin}', f'-R{region_str}', f'-J{projection}', '-I', '-S']
           with GMTTempFile() as fout:
             ses.call_module(module="mapproject", args=' '.join(args)+ " ->" + fout.name)
             out = fout.read().strip()
