@@ -13,6 +13,7 @@ Creates an interactive map from a _borderless_ png image **in Mercator projectio
 
 This works by aligning a matplotlib map on top of a _borderless_ png image. User's click coordinates on the matplotlib map are then directly registered and returned as map coordinates.
 
+![EW_Herat_demo_pygmt](https://github.com/user-attachments/assets/c5c2a376-877f-4555-9ee6-7a01a8f49185)
 
 ## Getting Started
 To launch the demo notebook (use this if you want to run through the demos):
