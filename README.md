@@ -15,6 +15,11 @@ This works by aligning a matplotlib map on top of a _borderless_ png image. User
 
 
 ## Getting Started
+To launch the demo notebook (use this if you want to run through the demos):
+
+To launch the full repo (use this if you want to experiment with the code):
+
+
 ### Installation
 This code works in conjunction with PyGMT virtual environment (see https://www.pygmt.org/latest/install.html).
 To get a local copy up and running follow these simple example steps.

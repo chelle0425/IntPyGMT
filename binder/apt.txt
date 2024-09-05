@@ -1,0 +1,2 @@
+libgmt-dev
+gmt
