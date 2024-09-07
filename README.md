@@ -13,7 +13,19 @@ Creates an interactive map from a _borderless_ png image **in Mercator projectio
 
 This works by aligning a matplotlib map on top of a _borderless_ png image. User's click coordinates on the matplotlib map are then directly registered and returned as map coordinates.
 
-![EW_Herat_demo_pygmt](https://github.com/user-attachments/assets/c5c2a376-877f-4555-9ee6-7a01a8f49185)
+<br />
+<figure>
+  <img src="https://github.com/user-attachments/assets/1f0e2838-bf10-43e2-af1a-6842ef9418cf" width="680" alt="EW_Herat_demo_pygmt"/> 
+</figure>
+<br />
+<figure>
+  <img src="https://github.com/user-attachments/assets/921d3242-2842-498f-8983-f7011c3a873b" width="680" alt="Time_series_demo"/>
+</figure>
+<br />
+<figure>
+  <img src="https://github.com/user-attachments/assets/e8044479-e126-4040-83c6-4dcfece659eb" width="380" alt="Casadia_demo"/>
+</figure>
+<br />
 
 ## Getting Started
 To launch the demo notebook (use this if you want to run through the demos):
@@ -47,12 +59,15 @@ pip install IntPyGMT@git+https://github.com/chelle0425/IntPyGMT.git
 ```
 
 ### Usage
-Please ensure that matplotlib widget is enabled before you call the function.
-```
-%matplotlib widget
-```
+> [!IMPORTANT]
+> Please ensure that matplotlib widget is enabled before you call the function.
+> ```
+> %matplotlib widget
+> ```
+
 
 To use on top of a GMT/PyGMT-generated png (see demo_conical/cascadia.ipynb):
+
 ```
 from IntPyGMT.IntPyGMT_overlay import gmt_png
 %matplotlib widget
@@ -95,7 +110,7 @@ This is an open-source project, thus contributions and edits are strongly encour
 This project may be freely distributed and modified provided the source is acknowledged explicitly. Please cite the latest release when you do so.
 
 ### Acknowledgements
-This project was initiated as part of my 3rd-year Independent Project in the Department of Earth Science and Engineering at Imperial College London (see: github.com/chelle0425/MomentTensorSum). It has greatly benefitted from subsequent development during my time as a COMET research intern at the University of Leeds.
+This project was initiated as part of my 3rd-year Independent Project in the Department of Earth Science and Engineering at Imperial College London (see: [MomentTensorSum](https://github.com/chelle0425/MomentTensorSum)). It has greatly benefitted from subsequent development during my time as a COMET research intern at the University of Leeds.
 
 I would like to express my sincerest gratitude to Dr Milan Lazecky, for it was his invaluable guidance and unwavering support that made this project a reality. 
 
