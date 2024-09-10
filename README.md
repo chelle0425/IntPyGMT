@@ -88,11 +88,6 @@ grid_freq = 2
 mercator_png("Herat_InSAR_stc.png", llcrnrlat, urcrnrlat, llcrnrlon, urcrnrlon, grid_freq)
 ```
 
-## Examples
-### GMT/PyGMT png
-
-### Borderless Mercator png
-
 ## To Do
 - README images and gifs
 - Binder
