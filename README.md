@@ -22,10 +22,6 @@ This works by aligning a matplotlib map on top of a _borderless_ png image. User
   <img src="https://github.com/user-attachments/assets/921d3242-2842-498f-8983-f7011c3a873b" width="680" alt="Time_series_demo"/>
 </figure>
 <br />
-<figure>
-  <img src="https://github.com/user-attachments/assets/e8044479-e126-4040-83c6-4dcfece659eb" width="380" alt="Casadia_demo"/>
-</figure>
-<br />
 
 ## Getting Started
 To launch the demo notebook (use this if you want to run through the demos):
