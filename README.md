@@ -62,7 +62,7 @@ pip install IntPyGMT@git+https://github.com/chelle0425/IntPyGMT.git
 > ```
 
 
-To use on top of a GMT/PyGMT-generated png (see demo_conical/cascadia.ipynb):
+To use on top of a GMT/PyGMT-generated png (see `demo_conical/cascadia.ipynb`):
 
 ```
 from IntPyGMT.IntPyGMT_overlay import gmt_png
@@ -75,7 +75,7 @@ gmt_png("cascadia.png", region, projection, "2c", "5c")
 ```
 
 
-To use on top of a _borderless_ png map (see Herat_InSAR_stc.ipynb):
+To use on top of a _borderless_ png map (see `demo_borderless_mercator_png/Herat_InSAR_stc.ipynb`):
 ```
 from IntPyGMT.IntPyGMT_overlay import mercator_png
 %matplotlib widget
