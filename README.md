@@ -26,7 +26,7 @@ This works by aligning a matplotlib map on top of a _borderless_ png image. User
 ## Getting Started
 To launch the demo notebook (use this if you want to run through the demos):
 
-To launch the full repo (use this if you want to experiment with the code):
+To launch the full repo (use this if you want to experiment with the code): [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chelle0425/IntPyGMT.git/HEAD)
 
 
 ### Installation
