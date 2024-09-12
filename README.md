@@ -90,13 +90,6 @@ grid_freq = 2
 mercator_png("Herat_InSAR_stc.png", llcrnrlat, urcrnrlat, llcrnrlon, urcrnrlon, grid_freq)
 ```
 
-## To Do
-- README images and gifs
-- Binder
-- Cite sources for demos
-- Make m.drawcoastlines() and parallels and meridians plot optional for mercator_png()
-- Do this the proper way using OOP
-
 ## Meta
 This is an open-source project, thus contributions and edits are strongly encouraged. GitHub users may open issues or make pull requests for contributions. Alternatively please email me (rochelle.pun@gmail.com) for any suggestions and/ or enquiries.
 
