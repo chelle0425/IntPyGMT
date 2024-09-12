@@ -13,20 +13,19 @@ Creates an interactive map from a _borderless_ png image **in Mercator projectio
 
 This works by aligning a matplotlib map on top of a _borderless_ png image. User's click coordinates on the matplotlib map are then directly registered and returned as map coordinates. Please refer to `demo_borderless_mercator_png` and `demo_borderless_mercator_pygmt` for demonstrations.  For an example of this function adapted and applied to an InSAR time-series plot, see `demo_time_series`.
 
+
 <br />
 <figure>
-  <img src="https://github.com/user-attachments/assets/1f0e2838-bf10-43e2-af1a-6842ef9418cf" width="680" alt="EW_Herat_demo_pygmt"/> 
+  <img src="https://github.com/user-attachments/assets/66356814-df24-49bf-af82-785e203b118d" width="680"/> 
 </figure>
 <br />
 <figure>
-  <img src="https://github.com/user-attachments/assets/921d3242-2842-498f-8983-f7011c3a873b" width="680" alt="Time_series_demo"/>
+  <img src="https://github.com/user-attachments/assets/9a6dd5bb-49ad-4b75-be05-1895526d6b38" width="680"/>
 </figure>
 <br />
 
 ## Getting Started
-To launch the demo notebook (use this if you want to run through the demos):
-
-To launch the full repo (use this if you want to experiment with the code):
+A testing binder notebook is now available here:
 <br />
 <br />
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/chelle0425/IntPyGMT.git/HEAD)
