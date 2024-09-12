@@ -2,3 +2,5 @@
 
 conda create --name pygmt --channel conda-forge pygmt
 conda activate pygmt
+pip install IntPyGMT@git+https://github.com/chelle0425/IntPyGMT.git
+conda install -c conda-forge ghostscript
