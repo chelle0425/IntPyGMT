@@ -1,2 +1,3 @@
 libgmt-dev
 gmt
+ghostscript
