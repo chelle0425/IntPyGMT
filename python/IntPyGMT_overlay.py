@@ -111,7 +111,7 @@ def gmt_png(png_path, region, projection, xshift, yshift):
         %matplotlib widget
         region=[-136, -118.5, 38.5, 53.1]
         projection="B-127.25/45.8/43.19/47.86/11c"
-        gmt_png("cascadia.png", region, projection, "2c", "5c")
+        gmt_png("cascadia.png", region, projection, "1.1c", "2.5c")
     '''
 
     ########## inputs ##########

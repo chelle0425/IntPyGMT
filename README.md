@@ -5,13 +5,15 @@ IntPyGMT is an open-source Jupyter Notebook library that generates interactive m
 
 Creates an interactive map from a GMT/PyGMT-generated png image. This feature supports all GMT/PyGMT projection systems provided that the correct xshift and yshift parameters are specified.
 
-This works by overlaying an interactive matplotlib widget on top of a GMT/PyGMT-generated png. User's click coordinates are recorded and adjusted for the map's border width (via xshift and yshift) before processed through GMT's mapproject module which returns map coordinates based on the specified region and projection. Please see `demo_conical` for a demonstration.
+This works by overlaying an interactive matplotlib widget on top of a GMT/PyGMT-generated png. User's click coordinates are recorded and adjusted for the map's border width (via xshift and yshift) before processed through GMT's mapproject module which returns map coordinates based on the specified region and projection. 
+
+The easiest way to control the border width of a GMT map is to first create an empty background canvas that **must be** larger than the main map. Then, you can adjust the xshift and yshift by shifting the main map relative to the background canvas. Please see `demo_conical` and `demo_pygmt` for demonstrations.
 
 #### 2. From a _borderless_ png map (in Mercator projection)
 
 Creates an interactive map from a _borderless_ png image **in Mercator projection**. This is not limited to GMT/PyGMT-generated outputs provided that the coordinates of the lower-left and upper-right corners of the map are known.
 
-This works by aligning a matplotlib map on top of a _borderless_ png image. User's click coordinates on the matplotlib map are then directly registered and returned as map coordinates. Please refer to `demo_borderless_mercator_png` and `demo_borderless_mercator_pygmt` for demonstrations.  For an example of this function adapted and applied to an InSAR time-series plot, see `demo_time_series`.
+This works by aligning a matplotlib map on top of a _borderless_ png image. User's click coordinates on the matplotlib map are then directly registered and returned as map coordinates. Please see `demo_borderless_mercator_png` and `demo_borderless_mercator_pygmt` for demonstrations.  For an example of this function adapted and applied to an InSAR time-series plot, see `demo_time_series`.
 
 
 <br />
