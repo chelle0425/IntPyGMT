@@ -43,6 +43,9 @@ conda activate pygmt
 Then, apart from cloning, you can install the library using pip:
 ```
 pip install IntPyGMT@git+https://github.com/chelle0425/IntPyGMT.git
+
+# please use following to update to the latest version:
+# pip install --force-reinstall --no-deps IntPyGMT@git+https://github.com/chelle0425/IntPyGMT.git
 ```
 
 ### Usage
