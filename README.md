@@ -34,26 +34,13 @@ A testing binder notebook is now available here:
 
 
 ### Installation
-This code works in conjunction with PyGMT virtual environment (see https://www.pygmt.org/latest/install.html).
-To get a local copy up and running follow these simple example steps.
-
-Clone the repo
-```
-git clone https://github.com/chelle0425/IntPyGMT.git
-```
-
-Navigate to the project directory
-```
-cd IntPyGMT
-```
-
-Initialize PyGMT environment
+This code works in conjunction with PyGMT (see https://www.pygmt.org/latest/install.html).
+A simple way to initialize PyGMT environment:
 ```
 conda create --name pygmt --channel conda-forge pygmt
 conda activate pygmt
 ```
-
-Install the library
+Then, apart from cloning, you can install the library using pip:
 ```
 pip install IntPyGMT@git+https://github.com/chelle0425/IntPyGMT.git
 ```
